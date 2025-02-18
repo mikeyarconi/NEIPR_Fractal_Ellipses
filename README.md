@@ -3,6 +3,9 @@
 
 ![image](https://github.com/user-attachments/assets/4c2bcabf-3fc9-4433-9d3d-dc4c8023b9d4)
 
+![image](https://github.com/user-attachments/assets/65597836-eeba-4cdd-a5a2-137e2f65166a)
+
+
 **Chapter 1: Introduction**
 
 **1.1 Motivation: Exploring Ellipse Recursion**
