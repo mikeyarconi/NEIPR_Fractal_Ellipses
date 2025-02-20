@@ -15,7 +15,7 @@ Transparency was non-negotiable. Each percentage had to be explainable to users,
 
 But there were constraints—many of them.  
 
-First, we couldn’t rely on a pure Stable Matching Algorithm. While stable matching works well for finite, one-to-one pairings, our system needed to provide a continuous flow of recommendations. Users had to remain open to new matches without ever being "locked in," meaning the algorithm could never fully converge on a stable state.  
+First, we couldn’t rely on a pure Stable Matching Algorithm. While stable matching works well for finite, one-to-one pairings, our system needed to provide a continuous flow of recommendations. Users had to remain open to new matches without ever being "locked in," meaning the algorithm could never fully converge on a stable state. The flow of recommendations had to behave such that neither side's availability for more matches would ever terminate them from being recommended to or receiving recommendations for more users.
 
 Second, standard collaborative filtering (or hybrid models) was off the table. As a personality-first model, we were explicitly constrained against perpetuating popularity biases in the user pool. Recommendations couldn’t favor "popular" users over others, as this would undermine the integrity of personality-based matching.  
 
