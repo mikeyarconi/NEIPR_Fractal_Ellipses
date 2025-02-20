@@ -3,6 +3,50 @@
 
 ![image](https://github.com/user-attachments/assets/4c2bcabf-3fc9-4433-9d3d-dc4c8023b9d4)
 
+
+ 
+Neat visual, right?  
+
+I’m not a mathematician by trade, but I find immense joy in studying it. A few years ago, I found myself at a startup tasked with building their recommendation engine—a personality-driven matching algorithm designed for their app. The promise to users was clear: connect people based on deep compatibility, rooted in personality insights. But this promise set the stage for a fascinating and frustrating dilemma.  
+
+At its core, the algorithm had to justify the degree of compatibility between any two users using personality results. These results, derived from established frameworks like OCEAN (Big Five) or Myers-Briggs, needed to be translated into explainable percentage breakdowns—e.g., "30% compatible in factor X, 20% in factor Y"—and then averaged into an overall match score.  
+
+Transparency was non-negotiable. Each percentage had to be explainable to users, with no room for guesswork or misleading claims. This demand for rigor pushed us to think deeply about how we designed the system.  
+
+But there were constraints—many of them.  
+
+First, we couldn’t rely on a pure Stable Matching Algorithm. While stable matching works well for finite, one-to-one pairings, our system needed to provide a continuous flow of recommendations. Users had to remain open to new matches without ever being "locked in," meaning the algorithm could never fully converge on a stable state.  
+
+Second, standard collaborative filtering (or hybrid models) was off the table. As a personality-first model, we were explicitly constrained against perpetuating popularity biases in the user pool. Recommendations couldn’t favor "popular" users over others, as this would undermine the integrity of personality-based matching.  
+
+Third, reinforcement learning or bandit algorithms weren’t viable either. With an action space (or bandit arms) growing to the size of our user base, we’d face massive cold-start problems. The inherent turn-taking mechanism of exploration vs. exploitation simply wouldn’t scale.  
+
+We explored clustering users by personality types as a starting point to mitigate these issues. While this helped, it didn’t solve everything. In practice, it opened up a web of increasingly complex directions, each more daunting than the last.  
+
+From the outset, I knew some form of multi-objective optimization would be essential. But when I experimented with linear optimization methods, I ran into a major issue: explainability. Watching the weights shift with each gradient update was one thing, but seeing those gradients dampened by normalization—and then watching the weights mutate further—was another. The process distorted the clarity we needed to explain matches to users.  
+
+But normalization seemed unavoidable, right? How else could we constrain compatibility scores to percentages (out of 100%) after optimization?  
+
+This question lingered, and then inspiration struck from unexpected places. I thought about pulley systems, where tension is distributed across different segments of a single rope. Then I recalled the Dirichlet stick-breaking process, which can enforce a beta distribution—potentially onto my percentage matches.  
+
+Digging deeper into the tools psychologists use to study personality, I stumbled upon Mahalanobis distance. I fell in love with it. Its ability to measure distances in multivariate space felt like a breakthrough, but it didn’t solve all my problems.  
+
+Ultimately, we converged on a proprietary solution I can’t disclose due to an NDA. But deep down, I felt there was a broader mathematical challenge here—one that could apply to similar problems beyond our specific use case.  
+
+A year later, while staring at Mahalanobis distance long enough to lose track of time, I noticed something: the ellipse rings it produced reminded me of the constrained chord-sum properties of ellipses.  
+
+Ah ha!  
+
+What if we could optimize weights without normalization by mapping them to points on an ellipse’s perimeter? The bi-foci chords of the ellipse could then serve as a constrained distribution for percentage matches.  
+
+But there was a catch. An ellipse only has two chords, limiting us to two weights. Using multiple ellipses would force us to work with an even number of weights, and optimizing weights across different ellipses would create disjunctions. Plotting more points on a single ellipse faced the same issue: we’d still need an even number of weights.  
+
+This led me to a critical question: How could we borrow just one of the chords to represent our weights?  
+
+And that’s where I introduce you to Nested Ellipse Intersection Point Recursion.  
+
+![image](https://github.com/user-attachments/assets/062ad4a9-af8c-4a2c-bf6b-7cf43ce5cc92)
+
 ![image](https://github.com/user-attachments/assets/65597836-eeba-4cdd-a5a2-137e2f65166a)
 
 
