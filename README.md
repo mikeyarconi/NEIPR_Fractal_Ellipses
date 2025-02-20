@@ -1,10 +1,8 @@
 # NEIPR_Fractal_Ellipses
 **Nested-Ellipse-Intersection-Point-Recursion**
+ ![4ebe0e6c-8b3c-4f7b-bdd2-b2a43cf42dc7](https://github.com/user-attachments/assets/8fc42076-85b7-4649-a447-b002a05be925)
 
-![image](https://github.com/user-attachments/assets/4c2bcabf-3fc9-4433-9d3d-dc4c8023b9d4)
 
-
- 
 Neat visual, right?  
 
 I’m not a mathematician by trade, but I find immense joy in studying it. A few years ago, I found myself at a startup tasked with building their recommendation engine—a personality-driven matching algorithm designed for their app. The promise to users was clear: connect people based on deep compatibility, rooted in personality insights. But this promise set the stage for a fascinating and frustrating dilemma.  
@@ -29,11 +27,15 @@ But normalization seemed unavoidable, right? How else could we constrain compati
 
 This question lingered, and then inspiration struck from unexpected places. I thought about pulley systems, where tension is distributed across different segments of a single rope. Then I recalled the Dirichlet stick-breaking process, which can enforce a beta distribution—potentially onto my percentage matches.  
 
-Digging deeper into the tools psychologists use to study personality, I stumbled upon Mahalanobis distance. I fell in love with it. Its ability to measure distances in multivariate space felt like a breakthrough, but it didn’t solve all my problems.  
+Digging deeper into the tools psychologists use to study personality, I stumbled upon **Mahalanobis distance**. I fell in love with it. Its ability to measure distances in multivariate space felt like a breakthrough, but it didn’t solve all my problems.  
+
+![image](https://github.com/user-attachments/assets/37bf1e70-2a25-4226-999b-a3d0366ef43f)
 
 Ultimately, we converged on a proprietary solution I can’t disclose due to an NDA. But deep down, I felt there was a broader mathematical challenge here—one that could apply to similar problems beyond our specific use case.  
 
 A year later, while staring at Mahalanobis distance long enough to lose track of time, I noticed something: the ellipse rings it produced reminded me of the constrained chord-sum properties of ellipses.  
+
+![image](https://github.com/user-attachments/assets/c64084ed-fc81-4a47-8ba2-acbe137f5eb0)
 
 Ah ha!  
 
@@ -47,8 +49,18 @@ And that’s where I introduce you to Nested Ellipse Intersection Point Recursio
 
 ![image](https://github.com/user-attachments/assets/062ad4a9-af8c-4a2c-bf6b-7cf43ce5cc92)
 
-![image](https://github.com/user-attachments/assets/65597836-eeba-4cdd-a5a2-137e2f65166a)
+---
 
+**The Full Break Down**
+
+![image](https://github.com/user-attachments/assets/4c2bcabf-3fc9-4433-9d3d-dc4c8023b9d4)
+
+---
+
+**Table of Contents**
+.
+.
+.
 
 **Chapter 1: Introduction**
 
@@ -58,7 +70,7 @@ This research investigates the properties and potential applications of a recurs
 
 ![image](https://github.com/user-attachments/assets/6ae71730-a890-4490-a5f3-ec7f204d9234)
 
-![image](https://github.com/user-attachments/assets/e79f9ac3-1aec-483d-8f3f-fe5f8a9a475f)
+
 
 **1.2 Key Findings**
 
